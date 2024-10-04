@@ -3,26 +3,26 @@
 fun main() {
     println("1. Olá, mundo!")
 
-    print("2. Edson")
+    print("2. Bernardo")
     print(" ")
-    print("Parisotto")
+    print("Carmo")
 
     println()
 
-    var nome = "3. Edson\nLuiz\nParisotto"
+    var nome = "3. Bernardo\nRodrigues\ndo\nCarmo"
     println(nome)
 
     // var nome = "Não posso redeclarar uma variável"
-    nome = "Edson" // mas posso reatribuir um novo valor
+    nome = "Bernardo" // mas posso reatribuir um novo valor
     print("4. Olá, " + nome + "\n")
 
-    var sobrenome = "Parisotto"
+    var sobrenome = "do Carmo"
     println("5. Como vai, $nome $sobrenome?")
 
     val variavelEstatica = "Bom dia"
     // variavelEstatica = "Não posso reatribuir um novo valor!"
 
-    val nomeCompleto = "6. " + nome + " Luiz " + sobrenome
+    val nomeCompleto = "6. " + nome + " Rodrigues " + sobrenome
     println(nomeCompleto)
     println("7. $variavelEstatica, ${nomeCompleto}!")
 }
