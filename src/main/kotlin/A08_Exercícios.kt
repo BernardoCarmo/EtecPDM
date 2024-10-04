@@ -1,48 +1,74 @@
-// Aula 8: Exercício de reforço
-// Métodos e funções
+/*
+    Aula 8: Exercício de reforço
+    Métodos e funções
+ */
 
 fun main() {
-    // Exercício 1: Conversão de anos em várias unidades
-    converterAnos(2)
-    
-    // Exercício 2: Contar caracteres de uma string
-    println(contarCaracteres("Exemplo de string"))
-    
-    // Exercício 3: Calcular o cubo de um número
-    println(cubo(3))
-    
-    // Exercício 4: Converter milhas em km
-    println(converterMilhasParaKm(10.0))
-    
-    // Exercício 5: Substituir "a" ou "A" por "x" e transformar em maiúsculas
-    val entrada = "Programação em Kotlin"
-    println(trocarAeAporX(entrada))
+    // transformar(2)
+    // println(caracteres("Kotlin"))
+    // cubo(3)
+    // converter(2)
+    trocarLetras("Anaconda") // xnxcondx
+}
+/* 1. Escreva uma função que seja capaz de receber a quantidade de anos e tranformar em meses, dias, horas, minutos e segundos. Saída desejada:
+    2 anos equivalem a:
+        24 meses
+        730 dias
+        17520 horas
+        1051200 minutos
+        63072000 segundos
+ */
+fun transformar(anos: Int){
+    println("$anos equivalem a : ${anos * 12} meses")
+    println("$anos equivalem a : ${anos * 365} dias")
+    println("$anos equivalem a : ${anos * 365 * 24} horas")
+    println("$anos equivalem a : ${anos * 365 * 24 * 60} minutos")
+    println("$anos equivalem a : ${anos * 365 * 24 * 60 * 60} segundos")
 }
 
-// Exercício 1: Função para converter anos em meses, dias, horas, minutos e segundos
-fun converterAnos(anos: Int) {
-    val meses = anos * 12
-    val dias = anos * 365  // Aproximando o ano como 365 dias
-    val horas = dias * 24
-    val minutos = horas * 60
-    val segundos = minutos * 60
-
-    println("$anos anos equivalem a:")
-    println("$meses meses")
-    println("$dias dias")
-    println("$horas horas")
-    println("$minutos minutos")
-    println("$segundos segundos")
+// 2. Escreva uma função capaz de receber um string e retornar a quantidade de carcteres
+fun caracteres(texto: String): String {
+    return "$texto tem ${texto.length} caracteres."
 }
 
-// Exercício 2: Função para contar caracteres de uma string
-fun contarCaracteres(texto: String): Int = texto.length
+// 3. Escreva uma função capaz de calcular o cubo de um número inteiro (cubo = n*n*n)
+fun cubo(numero: Int) {
+    print("O cubo de $numero é ${numero * numero * numero}")
+}
 
-// Exercício 3: Função para calcular o cubo de um número
-fun cubo(n: Int): Int = n * n * n
+// 4. Escreva uma função capaz de receber uma medida em milhas e converter em km (1 milha = 1.6 km)
+fun converter(milhas: Int){
+    println("$milhas milhas equivalem a ${milhas * 1.6} km")
+}
 
-// Exercício 4: Função para converter milhas em quilômetros
-fun converterMilhasParaKm(milhas: Double): Double = milhas * 1.6
+/* 5. Escreva um programa que seja capaz de receber uma string e fazer a troca todas as letras "a" ou "A" por "x". Observando que:
+    a. Não deve existir lógica dentro da função main. Main só deve ser usada como ponto de entrada.
+    b. Escrever uma função para a troca de letras e impressão do valor final.
+    c. String final deve estar com todas as letras maiúsculas
+    Exemplo: Entrada = "Programação em Kotlin" - Saída = "PROGRxMxÇxO EM KOTLIN"
+ */
+fun trocarLetras(texto: String){
+    // println(texto.lowercase().replace("a", "x"))
+    // println(texto.replace("A", "x").replace("a", "x").lowercase())
+    // println(texto.replace("a", "x", ignoreCase = true).lowercase())
 
-// Exercício 5: Função para substituir "a" ou "A" por "x" e transformar tudo em maiúsculas
-fun trocarAeAporX(texto: String): String = texto.uppercase().replace('A', 'X')
+    var textoFinal = texto.lowercase()
+    textoFinal = textoFinal.replace("a", "x", true)
+    println(textoFinal)
+}
+
+// 6. Sobre as funções criadas nos exercícios 2, 3 e 4, é possível transfomá-las em fuções de uma única linha? Se sim, trasforme-as.
+fun caracteres2(texto: String): String {
+    return "$texto tem ${texto.length} caracteres."
+}
+fun caracteres3(texto: String) = "$texto tem ${texto.length} caracteres."
+
+fun cubo2(numero: Int) {
+    print("O cubo de $numero é ${numero * numero * numero}")
+}
+fun cubo3(numero: Int) = print("O cubo de $numero é ${numero * numero * numero}")
+
+fun converter2(milhas: Int){
+    println("$milhas milhas equivalem a ${milhas * 1.6} km")
+}
+fun converter3(milhas: Int) = println("$milhas milhas equivalem a ${milhas * 1.6} km")
